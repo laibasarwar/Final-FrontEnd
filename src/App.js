@@ -8,7 +8,7 @@ import React from "react";
 
 import CreateUserPage from "./pages/CreateUser";
 import LoginPage from "./pages/Login";
-import UserOverviewPage from "./pages/UserProfile";
+import UserOverviewPage from "./pages/UserOverview";
 import CreatePostPage from "./pages/CreatePost";
 import DashboardPage from "./pages/Dashboard";
 import FindFriendsPage from "./pages/FindFriends";
