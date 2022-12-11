@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import LoginForm from "../components/LoginForm";
-import Header from "../components/Header";
+import { Link } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import LoginForm from "../components/LoginForm";
 
 function LoginPage({ isLoggedIn, setIsLoggedIn, setUserInformation }) {
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ function LoginPage({ isLoggedIn, setIsLoggedIn, setUserInformation }) {
       console.log(email, password);
 
       const auth = getAuth();
+
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
@@ -45,15 +46,14 @@ function LoginPage({ isLoggedIn, setIsLoggedIn, setUserInformation }) {
 
   return (
     <>
-      <Header
-        isLoggedIn={isLoggedIn}
-        setIsLoggedIn={setIsLoggedIn}
-        setUserInformation={setUserInformation}
-      />
-      <div className="PageWrapper">
-        <h1>Login</h1>
+      <div className="PageWrapper LoginWrapper">
+        <h1 className="LoginLogo">Book Nerd</h1>
         <LoginForm loginUser={loginUser} />
         <p>{errors}</p>
+        <p className="BoldLoginText">Already have an account?</p>
+        <p className="BoldLoginText">
+          <Link to="/create">Create Account</Link>
+        </p>
       </div>
     </>
   );

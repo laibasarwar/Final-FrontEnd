@@ -1,0 +1,136 @@
+.PageWrapper {
+  margin: 0 auto;
+  max-width: 740px;
+}
+
+.LoginLogo {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 48px;
+  margin: 0;
+}
+
+.LoginWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 350px;
+  min-height: 100vh;
+  padding: 25px;
+}
+.FormElement {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8px;
+}
+
+.FormElement input {
+  appearance: none;
+  background-color: #ececec;
+  border: 1px solid #98eeb5;
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 600;
+  max-width: 300px;
+  padding: 8px;
+  text-align: center;
+}
+
+.FormElement label {
+  font-size: 10px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  margin-top: 32px;
+}
+
+.ButtonWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.Button {
+  appearance: none;
+  background: #98ee85;
+  border: 1px solid #00e34d;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 32px;
+  padding: 8px 4px;
+  width: 150px;
+}
+
+.Button a {
+  color: black;
+}
+
+.BoldLoginText {
+  font-size: 12px;
+  font-weight: 800;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.BoldLoginText a {
+  color: #00a538;
+}
+/* 
+imput[type="email"] {
+  color: green;
+} */
+
+.Header {
+  border-bottom: 1px solid black;
+  display: flex;
+  padding: 20px 25px;
+}
+
+.Header .Logo {
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: bolder;
+  height: 16px;
+  line-height: 16px;
+  margin: auto;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  max-width: 1080px;
+  width: 100%;
+}
+
+nav p {
+  color: black;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0 40px 0 0;
+}
+
+nav p a {
+  color: black;
+  text-decoration: none;
+}
+
+.BookPostWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.BookPost {
+  border: 1px solid #98eeb5;
+  margin-bottom: 40px;
+  max-width: 350px;
+  width: 100%;
+}

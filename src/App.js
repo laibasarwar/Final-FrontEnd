@@ -77,7 +77,7 @@ function App() {
     {
       path: "/create",
       element: (
-        <CreatePostPage
+        <CreateUserPage
           isLoading={isLoading}
           isLoggedIn={isLoggedIn}
           userInformation={userInformation}

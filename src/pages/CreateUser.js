@@ -1,8 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { Link } from "react-router-dom";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import CreateUserForm from "../components/CreateUserForm";
-import Header from "../components/Header";
 
 function CreateUserPage({ setIsLoggedIn, setUserInformation, isLoggedIn }) {
   const [errors, setErrors] = useState();
@@ -15,9 +19,10 @@ function CreateUserPage({ setIsLoggedIn, setUserInformation, isLoggedIn }) {
   const signUpUser = useCallback(
     (e) => {
       e.preventDefault();
-
+      if (!e.currentTarget) return;
       const email = e.currentTarget.email.value;
       const password = e.currentTarget.password.value;
+      const name = e.currentTarget.name.value;
 
       console.log({ email, password });
 
@@ -34,6 +39,17 @@ function CreateUserPage({ setIsLoggedIn, setUserInformation, isLoggedIn }) {
             accessToken: user.accessToken,
           });
           setErrors();
+
+          updateProfile(user, { displayName: name })
+            .then(() => {
+              return setUserInformation({
+                email: user.email,
+                displayName: name,
+                uid: user.uid,
+                accessToken: user.accessToken,
+              });
+            })
+            .catch((err) => console.warn(err));
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -45,18 +61,15 @@ function CreateUserPage({ setIsLoggedIn, setUserInformation, isLoggedIn }) {
     [setErrors, setIsLoggedIn, setUserInformation]
   );
   return (
-    <>
-      <Header
-        isLoggedIn={isLoggedIn}
-        setIsLoggedIn={setIsLoggedIn}
-        setUserInformation={setUserInformation}
-      />
-      <div className="PageWrapper">
-        <h1>Create User</h1>
-        <CreateUserForm signUpUser={signUpUser} />
-        <p>{errors}</p>
-      </div>
-    </>
+    <div className="PageWrapper LoginWrapper">
+      <h1 className="LoginLogo">Book Nerd</h1>
+      <CreateUserForm signUpUser={signUpUser} />
+      <p>{errors}</p>
+      <p className="BoldLoginText">Already have an account?</p>
+      <p className="BoldLoginText">
+        <Link to="/login">Login</Link>
+      </p>
+    </div>
   );
 }
 

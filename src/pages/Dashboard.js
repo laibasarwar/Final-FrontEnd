@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
 import Header from "../components/Header";
+import BookPost from "../components/BookPost";
 
 function DashboardPage({
   isLoading,
@@ -22,7 +23,13 @@ function DashboardPage({
         setUserInformation={setUserInformation}
       />
       <div className="PageWrapper">
-        <p>Dashboard</p>
+        <h1>Landing Page</h1>
+        <div className="BookPostWrapper">
+          <BookPost />
+          <BookPost />
+          <BookPost />
+          <BookPost />
+        </div>
       </div>
     </>
   );
