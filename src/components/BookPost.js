@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function BookPost({ caption, imageAlt, imageSrc, userName, userId }) {
+function BookPost({ caption, imageAlt, imageUrl, userName, userId }) {
   return (
     <div className="BookPost">
-      <img src={imageSrc} alt={imageAlt} />
+      <img src={imageUrl} alt={imageAlt} />
       <div className="BookPostText">
         <p className="Caption">{caption}</p>
         <p>

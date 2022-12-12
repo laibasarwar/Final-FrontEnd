@@ -16,10 +16,20 @@
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  max-width: 350px;
+  max-width: 300px;
   min-height: 100vh;
   padding: 25px;
 }
+
+.CreatePostWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 300px;
+}
+
 .FormElement {
   display: flex;
   flex-direction: column;
@@ -125,9 +135,9 @@ nav p a {
 }
 
 .BookPostWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(24, 1fr);
 }
 
 .BookPost {
