@@ -42,13 +42,14 @@ function DashboardPage({
         setUserInformation={setUserInformation}
       />
       <div className="PageWrapper">
+        <h1>Recent Community Favorites</h1>
         <div className="BookPostWrapper">
           {postData.map((post) => (
             <BookPost
-              caption={post.caption}
-              imageAlt={post.imageAlt}
+              title={post.title}
+              author={post.author}
               imageUrl={post.imageUrl}
-              userId={post.userId}
+              rating={post.rating}
               userName={post.userName}
             />
           ))}

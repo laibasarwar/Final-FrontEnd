@@ -186,6 +186,7 @@ nav p a {
 .BookPost img {
   height: auto;
   width: 100%;
+  border-radius: 20px 20px 0 0;
 }
 
 .BookPostText {
@@ -200,6 +201,6 @@ nav p a {
 }
 
 .BookPostText p a {
-  color: #8a605e;
+  color: #572c2a;
   text-decoration: none;
 }
