@@ -68,6 +68,7 @@
 
 .Button a {
   color: black;
+  text-decoration: none;
 }
 
 .BoldLoginText {
@@ -80,10 +81,6 @@
 .BoldLoginText a {
   color: #00a538;
 }
-/* 
-imput[type="email"] {
-  color: green;
-} */
 
 .Header {
   border-bottom: 1px solid black;
@@ -98,6 +95,11 @@ imput[type="email"] {
   height: 16px;
   line-height: 16px;
   margin: auto;
+}
+
+.Header .Logo a {
+  color: black;
+  text-decoration: none;
 }
 
 nav {
@@ -129,8 +131,31 @@ nav p a {
 }
 
 .BookPost {
+  background-color: #f3f3f3;
   border: 1px solid #98eeb5;
   margin-bottom: 40px;
   max-width: 350px;
+  min-height: 350px;
   width: 100%;
+}
+
+.BookPost img {
+  height: auto;
+  width: 100%;
+}
+
+.BookPostText {
+  padding: 25px;
+}
+
+.BookPostText p {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.BookPostText p a {
+  color: #00a538;
+  text-decoration: none;
 }

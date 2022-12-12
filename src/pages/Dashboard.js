@@ -23,9 +23,13 @@ function DashboardPage({
         setUserInformation={setUserInformation}
       />
       <div className="PageWrapper">
-        <h1>Landing Page</h1>
         <div className="BookPostWrapper">
-          <BookPost />
+          <BookPost
+            caption="Cool Post"
+            imageAlt="cool post"
+            imageSrc="https://edit.org/images/cat/book-covers-big-2019101610.jpg"
+            userName="Cool Guy"
+          />
           <BookPost />
           <BookPost />
           <BookPost />

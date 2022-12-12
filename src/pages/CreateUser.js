@@ -32,24 +32,23 @@ function CreateUserPage({ setIsLoggedIn, setUserInformation, isLoggedIn }) {
         .then((userCredential) => {
           const user = userCredential.user;
           setIsLoggedIn(true);
-          setUserInformation({
-            email: user.email,
-            displayName: user.displayName,
-            uid: user.uid,
-            accessToken: user.accessToken,
-          });
           setErrors();
 
           updateProfile(user, { displayName: name })
             .then(() => {
-              return setUserInformation({
+              setUserInformation({
                 email: user.email,
                 displayName: name,
                 uid: user.uid,
                 accessToken: user.accessToken,
               });
             })
-            .catch((err) => console.warn(err));
+            .catch((err) => {
+              const errorCode = err.code;
+              const errorMessage = err.message;
+              console.warn({ err, errorCode, errorMessage });
+              setErrors(errorMessage);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;

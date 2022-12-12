@@ -17,7 +17,9 @@ function Header({ setIsLoggedIn, setUserInformation }) {
 
   return (
     <div className="Header">
-      <p className="Logo">Book Nerd</p>
+      <p className="Logo">
+        <Link to="/">Book Nerd</Link>
+      </p>
       <nav>
         <p>
           <Link to="/user/0">My Profile</Link>
