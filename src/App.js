@@ -91,6 +91,7 @@ function App() {
       path: "/find-friends",
       element: (
         <FindFriendsPage
+          app={appInitialized}
           isLoading={isLoading}
           isLoggedIn={isLoggedIn}
           userInformation={userInformation}

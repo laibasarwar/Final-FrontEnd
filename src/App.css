@@ -1,6 +1,12 @@
+body {
+  background-color: #ffe2e0;
+}
+
 .PageWrapper {
   margin: 0 auto;
-  max-width: 740px;
+  margin: 100px 100px;
+  color: #8a605e;
+  /* max-width: 0px; */
 }
 
 .LoginLogo {
@@ -60,25 +66,45 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-top: 32px;
   width: 100%;
 }
 
 .Button {
   appearance: none;
-  background: #98ee85;
-  border: 1px solid #00e34d;
+  background: #d6a9a7;
+  border: 1px solid #8a605e;
   border-radius: 10px;
   font-size: 12px;
   font-weight: 800;
-  margin-top: 32px;
   padding: 8px 4px;
-  width: 150px;
+  width: 120px;
 }
 
 .Button a {
   color: black;
   text-decoration: none;
+}
+
+.LogButton {
+  appearance: none;
+  background: #d6a9a7;
+  border: 1px solid #8a605e;
+  border-radius: 10px;
+  padding: 8px 4px;
+  width: 120px;
+}
+
+.LogButton p {
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .BoldLoginText {
@@ -89,11 +115,11 @@
 }
 
 .BoldLoginText a {
-  color: #00a538;
+  color: #8a605e;
 }
 
 .Header {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #d6a9a7;
   display: flex;
   padding: 20px 25px;
 }
@@ -108,7 +134,7 @@
 }
 
 .Header .Logo a {
-  color: black;
+  color: #8a605e;
   text-decoration: none;
 }
 
@@ -116,37 +142,45 @@ nav {
   align-items: center;
   display: flex;
   justify-content: flex-end;
-  margin: 0 auto;
+  gap: 20px;
   max-width: 1080px;
   width: 100%;
 }
 
 nav p {
-  color: black;
+  color: #8a605e;
   cursor: pointer;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: bold;
   margin: 0 40px 0 0;
+  text-align: center;
+  align-items: center;
+  /* width: 100%; */
 }
 
 nav p a {
-  color: black;
+  color: #8a605e;
   text-decoration: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .BookPostWrapper {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(24, 1fr);
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .BookPost {
-  background-color: #f3f3f3;
-  border: 1px solid #98eeb5;
+  background-color: #d6a9a7;
+  border: 1px solid #8a605e;
   margin-bottom: 40px;
   max-width: 350px;
   min-height: 350px;
   width: 100%;
+  border-radius: 20px;
 }
 
 .BookPost img {
@@ -166,6 +200,6 @@ nav p a {
 }
 
 .BookPostText p a {
-  color: #00a538;
+  color: #8a605e;
   text-decoration: none;
 }

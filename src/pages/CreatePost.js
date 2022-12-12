@@ -20,10 +20,10 @@ function CreatePostPage({
     async (e) => {
       e.preventDefault();
       const db = getFirestore(app);
-      const storage = getStorage();
+      // const storage = getStorage();
 
-      const imageToUpload = e.currentTarget.imageToUpload.files[0];
-      const imageRef = ref(storage, imageToUpload.name);
+      // const imageToUpload = e.currentTarget.imageToUpload.files[0];
+      // const imageRef = ref(storage, imageToUpload.name);
 
       const caption = e.currentTarget.caption.value;
       const imageAlt = e.currentTarget.imageAlt.value;
@@ -31,17 +31,17 @@ function CreatePostPage({
       const userId = userInformation.uid;
 
       try {
-        const imageUpload = await uploadBytes(imageRef, imageToUpload).then(
-          (snapshot) => {
-            console.log("Uploaded a blob or file!", snapshot);
-            return snapshot;
-          }
-        );
+        // const imageUpload = await uploadBytes(imageRef, imageToUpload).then(
+        //   (snapshot) => {
+        //     console.log("Uploaded a blob or file!", snapshot);
+        //     return snapshot;
+        //   }
+        // );
 
         const docRef = await addDoc(collection(db, "posts"), {
           caption,
           imageAlt,
-          imageUrl: imageUpload.metadata.fullPath,
+          // imageUrl: imageUpload.metadata.fullPath,
           userId: userId,
           userName,
         });

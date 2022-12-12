@@ -18,16 +18,18 @@ function Header({ setIsLoggedIn, setUserInformation }) {
   return (
     <div className="Header">
       <p className="Logo">
-        <Link to="/">Book Nerd</Link>
+        <Link to="/">Book Nerds</Link>
       </p>
       <nav>
         <p>
           <Link to="/user/0">My Profile</Link>
         </p>
         <p>
-          <Link to="/">Find Friends</Link>
+          <Link to="/find-friends">Find Friends</Link>
         </p>
-        <p onClick={() => logout()}>Log Out</p>
+        <button className="LogButton">
+          <p onClick={() => logout()}>Log Out</p>
+        </button>
         <button className="Button">
           <Link to="/create-post">Create Post</Link>
         </button>
