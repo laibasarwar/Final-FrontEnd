@@ -1,7 +1,6 @@
 import React, { useEffect, useCallback, useState } from "react";
 import { useNavigate } from "react-router";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
 import Header from "../components/Header";
 import CreatePostForm from "../components/CreatePostForm";
 
@@ -20,30 +19,22 @@ function CreatePostPage({
     async (e) => {
       e.preventDefault();
       const db = getFirestore(app);
-      // const storage = getStorage();
 
-      // const imageToUpload = e.currentTarget.imageToUpload.files[0];
-      // const imageRef = ref(storage, imageToUpload.name);
-
-      const caption = e.currentTarget.caption.value;
-      const imageAlt = e.currentTarget.imageAlt.value;
-      const userName = userInformation.displayName;
+      const rating = e.currentTarget.rating.value;
+      const imageUrl = e.currentTarget.imageUrl.value;
+      const userName = e.currentTarget.userName.value;
       const userId = userInformation.uid;
+      const title = e.currentTarget.title.value;
+      const author = e.currentTarget.author.value;
 
       try {
-        // const imageUpload = await uploadBytes(imageRef, imageToUpload).then(
-        //   (snapshot) => {
-        //     console.log("Uploaded a blob or file!", snapshot);
-        //     return snapshot;
-        //   }
-        // );
-
         const docRef = await addDoc(collection(db, "posts"), {
-          caption,
-          imageAlt,
-          // imageUrl: imageUpload.metadata.fullPath,
+          rating,
+          imageUrl,
           userId: userId,
           userName,
+          title,
+          author,
         });
         console.log("Document writtem with Id:", docRef.id);
         setPostSuccessful(true);
