@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function FriendPost({ books, imageUrl, friendsn, userId, userName }) {
   return (
     <div className="BookPost">
-      <img src={imageUrl} alt={title} />
+      <img src={imageUrl} alt={userName} />
       <div className="BookPostText">
         <p>
           Posted by: <Link to={`user/${userId})`}>{userName}</Link>
