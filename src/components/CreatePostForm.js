@@ -16,7 +16,7 @@ function CreatePostForm({ createPost }) {
       <input type="text" name="imageAlt" />
 
       <div className="ButtonWrapper">
-        <button type="submit" className="Button">
+        <button type="submit" className="Button-Create">
           Submit
         </button>
       </div>
